@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  producer:
+    build: ./producer
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    ports:
+      - "5000:5000"
+  
+  consumer_1:
+    build: ./consumer_1
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    ports:
+      - "5001:5000"
+  
+  consumer_2:
+    build: ./consumer_2
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    ports:
+      - "5002:5000"
+
+  consumer_3:
+    build: ./consumer_3
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    ports:
+      - "5003:5000"
+
+  consumer_4:
+    build: ./consumer_4
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_HOST=rabbitmq
+    ports:
+      - "5004:5000"
+      
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
