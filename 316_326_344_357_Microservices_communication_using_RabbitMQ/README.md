@@ -1,4 +1,4 @@
-# 276_298_302_304_Microservices_communication_using_RabbitMQ
+#PES2UG21CS316_PES2UG21CS326_PES2UG21CS344_PES2UG21CS357_MICROSERVICES_USING_RABBITMQ.
 Cloud computing project
 
 To run the code:
